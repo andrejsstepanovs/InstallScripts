@@ -3,8 +3,8 @@ InstallScripts
 
 Module for Zend Framework 2 to perform script execution
 
-InstallScripts provide you with tools to create scripts that needs to be executed in system
-to upgrade database structure updates, or perform other tasks that needs to be done from terminal.
+It allow you to create scripts that needs to be executed from terminal.
+
 
 
 Setup
