@@ -11,6 +11,8 @@ Setup
 -----
 
 Install using composer.
+---
+
 ``` xml
     "require": {
         "wormhit/InstallScripts": "*"
@@ -28,15 +30,31 @@ php composer.phar update
 ```
 
 
+Enable module
+---
+
+config/application.config.php
+``` php
+
+<?php
+return array(
+    'modules' => array(s
+        '...',
+        'InstallScripts'
+    ),
+);
+
+```
+
+
 Usage
 -----
 
 Setup InstallScripts configuration
+---
 
 config/autoload/instal.global.php
 ``` php
-<?php
-
 <?php
 
 return array(
@@ -60,11 +78,10 @@ return array(
 
 
 Create first script
+---
 
 module/Application/src/Application/Install/Transactions.php
 ``` php
-<?php
-
 <?php
 
 namespace Application\Install;
@@ -115,9 +132,10 @@ class Transactions extends Script
 
 
 Use script
+---
 
-``` sh
+![ScreenShot](http://i.imgur.com/aNJcMK5.png)
 
+![ScreenShot](http://i.imgur.com/m6M6r3m.png)
 
-
-```
+![ScreenShot](http://i.imgur.com/v2LnocW.png)
