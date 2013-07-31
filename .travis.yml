@@ -7,5 +7,5 @@ php:
 before_script:
   - php composer.phar install
 
-script: vendor/phpunit/phpunit/composer/bin/phpunit -c test/phpunit.xml
+script: vendor/phpunit/phpunit/composer/bin/phpunit -c travis.phpunit.xml
 
