@@ -15,7 +15,6 @@ class Module implements
     /** @var array */
     protected $config;
 
-
     /**
      * @return array
      */
