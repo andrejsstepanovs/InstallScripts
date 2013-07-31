@@ -6,5 +6,6 @@ php:
 
 before_script:
   - php composer.phar install
+  - chmod 777 travis.phpunit.xml
 
 script: vendor/phpunit/phpunit/composer/bin/phpunit -c travis.phpunit.xml
