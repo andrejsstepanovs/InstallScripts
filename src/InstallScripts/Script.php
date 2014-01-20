@@ -14,6 +14,20 @@ class Script implements ScriptInterface
     /** @var \Zend\Mvc\MvcEvent */
     protected $mvcEvent;
 
+    /** @var array */
+    protected $applicationConfig;
+
+
+    /**
+     * @return array
+     */
+    protected function getApplicationConfig()
+    {
+        if (null === $this->applicationConfig) {
+            $this->applicationConfig = $this->getMvcEvent()->getApplication()->getConfig();
+        }
+        return $this->applicationConfig;
+    }
 
     /**
      * @param string $versions
