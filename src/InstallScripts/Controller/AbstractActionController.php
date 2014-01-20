@@ -192,7 +192,7 @@ class AbstractActionController extends ZendActionController
         echo PHP_EOL;
 
 
-        $result = call_user_method($method, $script);
+        $result = call_user_func(array($script, $method));
 
 
         $spentTime = gmdate('H:i:s', time() - $start);
