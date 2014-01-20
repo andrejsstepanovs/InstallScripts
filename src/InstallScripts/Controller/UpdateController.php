@@ -15,10 +15,12 @@ class UpdateController extends AbstractActionController
 
         $scriptName = $this->getRequest()->getParam('script');
 
+        /** @var \InstallScripts\StorageAdapter\StorageAdapterInterface $storageAdapter */
         $storageAdapter = $this->getStorage()->getAdapter();
 
         $changed = false;
 
+        /** @var \InstallScripts\Script $script */
         $scripts = $this->getLocator()->getScripts();
         foreach ($scripts as $script) {
 
@@ -36,7 +38,7 @@ class UpdateController extends AbstractActionController
 
             $versions = $script->getVersionsSorted();
 
-            foreach ($versions AS $installVersion => $method) {
+            foreach ($versions as $installVersion => $method) {
 
                 if (version_compare($currentVersion, $installVersion) >= 0) {
                     continue;

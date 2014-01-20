@@ -13,10 +13,12 @@ class SetLatestController extends AbstractActionController
     {
         echo $this->getTitle('set-latest');
 
+        /** @var \InstallScripts\StorageAdapter\StorageAdapterInterface $storageAdapter */
         $storageAdapter = $this->getStorage()->getAdapter();
 
         $changed = false;
 
+        /** @var \InstallScripts\Script $script */
         $scripts = $this->getLocator()->getScripts();
         foreach ($scripts as $script) {
             $scriptName     = $script->getName();

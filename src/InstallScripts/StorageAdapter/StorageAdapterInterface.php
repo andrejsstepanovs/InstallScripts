@@ -39,7 +39,7 @@ interface StorageAdapterInterface
      *
      * @param string $scriptName
      * @param string $version
-     * @return InstallScripts\Storage\StorageAdapterInterface
+     * @return \InstallScripts\StorageAdapter\StorageAdapterInterface
      */
     public function setScriptVersion($scriptName, $version);
 }

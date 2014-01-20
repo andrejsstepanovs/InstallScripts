@@ -70,7 +70,7 @@ class LocatorTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException        InstallScripts\Exception\LocatorException
+     * @expectedException        \InstallScripts\Exception\LocatorException
      * @expectedExceptionMessage InstallScript "InstallScriptsTest\Unknown\Unknown" not found
      */
     public function testGetScriptNotFound()
@@ -86,7 +86,7 @@ class LocatorTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException        InstallScripts\Exception\ScriptException
+     * @expectedException        \InstallScripts\Exception\ScriptException
      * @expectedExceptionMessage Script versions not set for "InstallScriptsTest\InstallScripts\Script\ScriptMock"
      */
     public function testGetBundleNoConfig()
@@ -106,7 +106,7 @@ class LocatorTest extends PHPUnit_Framework_TestCase
 
 
     /**
-     * @expectedException        InstallScripts\Exception\LocatorException
+     * @expectedException        \InstallScripts\Exception\LocatorException
      * @expectedExceptionMessage Script "InstallScriptsTest\Locator\LocatorTest" not instance of ScriptInterface
      */
     public function testGetScriptNoInstanceOfScript()

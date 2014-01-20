@@ -18,10 +18,12 @@ class SetController extends AbstractActionController
         $scriptName = $request->getParam('script');
         $version    = $request->getParam('version');
 
+        /** @var \InstallScripts\StorageAdapter\StorageAdapterInterface $storageAdapter */
         $storageAdapter = $this->getStorage()->getAdapter();
 
         $changed = false;
 
+        /** @var \InstallScripts\Script $script */
         $scripts = $this->getLocator()->getScripts();
         foreach ($scripts as $script) {
             $currentScriptName = str_replace('\\', '', $script->getName());

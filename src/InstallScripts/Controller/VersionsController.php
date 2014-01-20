@@ -15,6 +15,7 @@ class VersionsController extends AbstractActionController
 
         $scriptName = $this->getRequest()->getParam('script');
 
+        /** @var \InstallScripts\Script $script */
         $scripts = $this->getLocator()->getScripts();
         foreach ($scripts as $script) {
 
