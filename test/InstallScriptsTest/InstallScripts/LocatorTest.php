@@ -106,14 +106,14 @@ class LocatorTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException        \InstallScripts\Exception\LocatorException
-     * @expectedExceptionMessage Script "InstallScriptsTest\Locator\LocatorTest" not instance of ScriptInterface
+     * @expectedExceptionMessage Script "InstallScriptsTest\InstallScripts\Script\WrongScript" not instance of ScriptInterface
      */
     public function testGetScriptNoInstanceOfScript()
     {
         $config = array(
             'Scripts' => array(
                 'InstallScriptsTest' => array(
-                    'Locator\LocatorTest',
+                    'InstallScripts\Script\WrongScript',
                 )
             )
         );
