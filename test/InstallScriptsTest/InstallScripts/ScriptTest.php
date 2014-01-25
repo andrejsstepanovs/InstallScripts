@@ -34,7 +34,7 @@ class ScriptTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException        InstallScripts\Exception\ScriptException
+     * @expectedException        \InstallScripts\Exception\ScriptException
      * @expectedExceptionMessage Script versions not set for "InstallScriptsTest\InstallScripts\Script\ScriptMock"
      */
     public function testGetVersionsDontExist()
