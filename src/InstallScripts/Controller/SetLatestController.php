@@ -2,9 +2,7 @@
 
 namespace InstallScripts\Controller;
 
-use InstallScripts\Controller\AbstractActionController;
 use Zend\Console\ColorInterface as Color;
-
 
 class SetLatestController extends AbstractActionController
 {

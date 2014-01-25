@@ -1,11 +1,10 @@
 <?php
 
-namespace InstallScriptsTest\Locator;
+namespace InstallScripts;
 
 use PHPUnit_Framework_TestCase;
 use \InstallScriptsTest\InstallScripts\Script\ScriptMock;
 use Zend\Mvc\MvcEvent;
-
 
 /**
  * @group Script
@@ -15,9 +14,8 @@ class ScriptTest extends PHPUnit_Framework_TestCase
     /** @var \InstallScriptsTest\InstallScripts\Script\ScriptMock */
     protected $script;
 
-
     /**
-     * @param null|\Zend\Mvc\MvcEvent $mvcEvent
+     * @param  null|\Zend\Mvc\MvcEvent                              $mvcEvent
      * @return \InstallScriptsTest\InstallScripts\Script\ScriptMock
      */
     public function getScript($mvcEvent = null)
@@ -25,6 +23,7 @@ class ScriptTest extends PHPUnit_Framework_TestCase
         if (null === $this->script) {
             $this->script = new ScriptMock($mvcEvent);
         }
+
         return $this->script;
     }
 
@@ -58,7 +57,8 @@ class ScriptTest extends PHPUnit_Framework_TestCase
 
     protected function shuffle_assoc($array)
     {
-        uksort($array, function() { return rand() > rand(); });
+        uksort($array, function () { return rand() > rand(); });
+
         return $array;
     }
 

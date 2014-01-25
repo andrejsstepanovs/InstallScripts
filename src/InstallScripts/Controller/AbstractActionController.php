@@ -11,7 +11,6 @@ use InstallScripts\Locator as InstallScriptsLocator;
 use InstallScripts\Exception\ActionControllerException;
 use InstallScripts\Script;
 
-
 class AbstractActionController extends ZendActionController
 {
     /** @var array */
@@ -26,9 +25,8 @@ class AbstractActionController extends ZendActionController
     /** @var \Zend\Console\Adapter\Posix */
     protected $console;
 
-
     /**
-     * @param  \Zend\Mvc\MvcEvent $mvcEvent
+     * @param  \Zend\Mvc\MvcEvent                  $mvcEvent
      * @return mixed
      * @throws \Zend\Mvc\Exception\DomainException
      */
@@ -36,7 +34,7 @@ class AbstractActionController extends ZendActionController
     {
         $request = $this->getRequest();
 
-        if (!$request instanceof ZendConsoleRequest){
+        if (!$request instanceof ZendConsoleRequest) {
             throw new ActionControllerException(
                 'You can only use this action from a console!'
             );
@@ -58,9 +56,9 @@ class AbstractActionController extends ZendActionController
     }
 
     /**
-     * @param string $message
-     * @param integer $color
-     * @param integer $strPad
+     * @param  string  $message
+     * @param  integer $color
+     * @param  integer $strPad
      * @return string
      */
     protected function colorize($message, $color = Color::RESET, $strPad = null)
@@ -73,8 +71,8 @@ class AbstractActionController extends ZendActionController
     }
 
     /**
-     * @param string $title
-     * @param integer $color
+     * @param  string  $title
+     * @param  integer $color
      * @return string
      */
     protected function getTitle($title, $color = Color::RED)
@@ -110,7 +108,7 @@ class AbstractActionController extends ZendActionController
     }
 
     /**
-     * @param string $key
+     * @param  string $key
      * @return mixed
      */
     protected function getConfig($key = null)
@@ -161,8 +159,8 @@ class AbstractActionController extends ZendActionController
     }
 
     /**
-     * @param \InstallScripts\Script $script
-     * @param string $method
+     * @param  \InstallScripts\Script    $script
+     * @param  string                    $method
      * @return boolean
      * @throws ActionControllerException
      */
@@ -191,16 +189,13 @@ class AbstractActionController extends ZendActionController
         echo $this->colorize($startLabel, Color::LIGHT_YELLOW, 20);
         echo PHP_EOL;
 
-
         $result = call_user_func(array($script, $method));
-
 
         $spentTime = gmdate('H:i:s', time() - $start);
         echo $this->colorize('Stop: ', Color::NORMAL, 12);
         echo $this->colorize(date('Y-m-d H:i:s'), Color::LIGHT_YELLOW, 20);
         echo $this->colorize($spentTime, Color::LIGHT_GREEN);
         echo PHP_EOL;
-
 
         return $result;
     }

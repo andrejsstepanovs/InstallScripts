@@ -2,10 +2,8 @@
 
 namespace InstallScripts\Controller;
 
-use InstallScripts\Controller\AbstractActionController;
 use InstallScripts\Exception\ActionControllerException;
 use Zend\Console\ColorInterface as Color;
-
 
 class InstallController extends AbstractActionController
 {
@@ -22,7 +20,6 @@ class InstallController extends AbstractActionController
         $storageAdapter = $this->getStorage()->getAdapter();
 
         $changed = false;
-
 
         $scripts = $this->getLocator()->getScripts();
         foreach ($scripts as $script) {

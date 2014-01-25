@@ -3,8 +3,6 @@
 namespace InstallScripts;
 
 use InstallScripts\Exception\LocatorException;
-use InstallScripts\ScriptInterface;
-
 
 class Locator
 {
@@ -14,19 +12,19 @@ class Locator
     /** @var array */
     protected $scripts;
 
-
     /**
-     * @param array $config
+     * @param  array                   $config
      * @return \InstallScripts\Locator
      */
     public function setConfig($config)
     {
         $this->config = $config;
+
         return $this;
     }
 
     /**
-     * @param null|string $key
+     * @param  null|string $key
      * @return mixed
      */
     public function getConfig($key = null)
@@ -45,8 +43,8 @@ class Locator
     }
 
     /**
-     * @param string $namespace
-     * @param string $scriptName
+     * @param  string           $namespace
+     * @param  string           $scriptName
      * @return string
      * @throws LocatorException
      */

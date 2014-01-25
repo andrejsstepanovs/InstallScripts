@@ -1,6 +1,6 @@
 <?php
 
-namespace InstallScriptsTest\Storage;
+namespace InstallScripts;
 
 use PHPUnit_Framework_TestCase;
 use InstallScripts\Storage as InstallScriptsStorage;
@@ -10,19 +10,19 @@ use InstallScripts\Storage as InstallScriptsStorage;
  */
 class StorageTest extends PHPUnit_Framework_TestCase
 {
-    /** @var \InstallScripts\Locator\Locator */
+    /** @var \InstallScripts\Locator */
     protected $storage;
 
-
     /**
-     * @param null|array $config
-     * @return \InstallScripts\Storage\Storage
+     * @param  null|array              $config
+     * @return \InstallScripts\Storage
      */
     public function getStorage($config = null)
     {
         if (null === $this->storage) {
             $this->storage = new InstallScriptsStorage($config);
         }
+
         return $this->storage;
     }
 
@@ -88,7 +88,7 @@ class StorageTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException        InstallScripts\Exception\StorageAdapterException
+     * @expectedException        \InstallScripts\Exception\StorageAdapterException
      * @expectedExceptionMessage StorageAdapter "InstallScripts\Storage\UnknownAdapter" not found
      */
     public function testGetAdapterDontExist()
@@ -105,5 +105,4 @@ class StorageTest extends PHPUnit_Framework_TestCase
         $adapter = $storage->getAdapter();
         $this->assertInstanceOf('InstallScripts\StorageAdapter\FileStorageAdapter', $adapter);
     }
-
 }

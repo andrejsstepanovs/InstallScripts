@@ -2,9 +2,7 @@
 
 namespace InstallScripts\Controller;
 
-use InstallScripts\Controller\AbstractActionController;
 use Zend\Console\ColorInterface as Color;
-
 
 class SetController extends AbstractActionController
 {
@@ -32,7 +30,6 @@ class SetController extends AbstractActionController
             if ($currentScriptName != $searchScriptName) {
                 continue;
             }
-
 
             $currentVersion =
                     $storageAdapter->getScriptVersion($script->getName());

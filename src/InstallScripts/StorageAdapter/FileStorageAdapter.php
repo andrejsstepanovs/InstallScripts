@@ -4,8 +4,6 @@ namespace InstallScripts\StorageAdapter;
 
 use InstallScripts\Exception\StorageAdapterException;
 use Zend\Json\Json;
-use InstallScripts\StorageAdapter\StorageAdapterInterface;
-
 
 class FileStorageAdapter implements StorageAdapterInterface
 {
@@ -15,14 +13,14 @@ class FileStorageAdapter implements StorageAdapterInterface
     /** @var array */
     protected $options;
 
-
     /**
-     * @param array $data
+     * @param  array                                             $data
      * @return \InstallScripts\StorageAdapter\FileStorageAdapter
      */
     public function setData(array $data)
     {
         $this->data = $data;
+
         return $this;
     }
 
@@ -35,17 +33,18 @@ class FileStorageAdapter implements StorageAdapterInterface
     }
 
     /**
-     * @param array $options
+     * @param  array                                             $options
      * @return \InstallScripts\StorageAdapter\FileStorageAdapter
      */
     public function setOptions(array $options)
     {
         $this->options = $options;
+
         return $this;
     }
 
     /**
-     * @param null|string $key
+     * @param  null|string $key
      * @return array
      */
     public function getOptions($key = null)
@@ -64,7 +63,7 @@ class FileStorageAdapter implements StorageAdapterInterface
     }
 
     /**
-     * @param array $data
+     * @param  array                          $data
      * @return boolean
      * @throws Exception\StorageSaveException
      */
@@ -83,6 +82,7 @@ class FileStorageAdapter implements StorageAdapterInterface
         }
 
         fwrite($stream, $stringData);
+
         return fclose($stream);
     }
 
@@ -127,7 +127,7 @@ class FileStorageAdapter implements StorageAdapterInterface
     }
 
     /**
-     * @param string $stringData
+     * @param  string $stringData
      * @return array
      */
     protected function getDataAsArray($stringData)
@@ -136,7 +136,7 @@ class FileStorageAdapter implements StorageAdapterInterface
     }
 
     /**
-     * @param string $scriptName
+     * @param  string $scriptName
      * @return string version
      */
     public function getScriptVersion($scriptName)
@@ -157,7 +157,7 @@ class FileStorageAdapter implements StorageAdapterInterface
     }
 
     /**
-     * @param string $scriptName
+     * @param  string                                            $scriptName
      * @param string version
      * @return \InstallScripts\StorageAdapter\FileStorageAdapter
      */
@@ -165,6 +165,7 @@ class FileStorageAdapter implements StorageAdapterInterface
     {
         $storageData = $this->getData();
         $storageData['scripts'][$scriptName]['version'] = $version;
+
         return $this->setData($storageData);
     }
 

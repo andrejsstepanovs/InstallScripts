@@ -5,7 +5,6 @@ namespace InstallScripts;
 use Zend\Mvc\MvcEvent;
 use InstallScripts\Exception\ScriptException;
 
-
 class Script implements ScriptInterface
 {
     /** @var array */
@@ -17,7 +16,6 @@ class Script implements ScriptInterface
     /** @var array */
     protected $applicationConfig;
 
-
     /**
      * @return array
      */
@@ -26,16 +24,18 @@ class Script implements ScriptInterface
         if (null === $this->applicationConfig) {
             $this->applicationConfig = $this->getMvcEvent()->getApplication()->getConfig();
         }
+
         return $this->applicationConfig;
     }
 
     /**
-     * @param string $versions
+     * @param  string                 $versions
      * @return \InstallScripts\Script
      */
     public function setVersions($versions)
     {
         $this->versions = $versions;
+
         return $this;
     }
 
@@ -98,12 +98,13 @@ class Script implements ScriptInterface
     }
 
     /**
-     * @param \Zend\Mvc\MvcEvent $mvcEvent
+     * @param  \Zend\Mvc\MvcEvent     $mvcEvent
      * @return \InstallScripts\Script
      */
     public function setMvcEvent(MvcEvent $mvcEvent)
     {
         $this->mvcEvent = $mvcEvent;
+
         return $this;
     }
 

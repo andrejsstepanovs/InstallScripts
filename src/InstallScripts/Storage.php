@@ -5,7 +5,6 @@ namespace InstallScripts;
 use InstallScripts\Exception\StorageAdapterException;
 use InstallScripts\StorageAdapter\StorageAdapterInterface;
 
-
 class Storage
 {
     /** @var array */
@@ -14,19 +13,19 @@ class Storage
     /** @var |InstallScripts\StorageAdapter\StorageAdapterInterface */
     protected $storageAdapter;
 
-
     /**
-     * @param array $config
+     * @param  array                   $config
      * @return \InstallScripts\Storage
      */
     public function setConfig($config)
     {
         $this->config = $config;
+
         return $this;
     }
 
     /**
-     * @param null|string $key
+     * @param  null|string $key
      * @return mixed
      */
     public function getConfig($key = null)
@@ -45,7 +44,7 @@ class Storage
     }
 
     /**
-     * @param array $storageConfig
+     * @param  array                                             $storageConfig
      * @return string
      * @throws \InstallScripts\Exception\StorageAdapterException
      */
@@ -77,7 +76,6 @@ class Storage
                     . 'not found'
                 );
             }
-
 
             $storageAdapter = new $storageAdapterClassName();
 

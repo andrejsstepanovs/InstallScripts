@@ -1,6 +1,6 @@
 <?php
 
-namespace InstallScriptsTest\Locator;
+namespace InstallScripts;
 
 use PHPUnit_Framework_TestCase;
 use InstallScripts\Locator as InstallScriptsLocator;
@@ -13,9 +13,8 @@ class LocatorTest extends PHPUnit_Framework_TestCase
     /** @var \InstallScripts\Locator */
     protected $locator;
 
-
     /**
-     * @param null|array $config
+     * @param  null|array              $config
      * @return \InstallScripts\Locator
      */
     public function getLocator($config = null)
@@ -23,6 +22,7 @@ class LocatorTest extends PHPUnit_Framework_TestCase
         if (null === $this->locator) {
             $this->locator = new InstallScriptsLocator($config);
         }
+
         return $this->locator;
     }
 
@@ -103,7 +103,6 @@ class LocatorTest extends PHPUnit_Framework_TestCase
             $bundle->getVersions();
         }
     }
-
 
     /**
      * @expectedException        \InstallScripts\Exception\LocatorException

@@ -4,7 +4,6 @@ namespace InstallScripts;
 
 use Zend\Mvc\MvcEvent;
 
-
 interface ScriptInterface
 {
     /**
@@ -31,7 +30,7 @@ interface ScriptInterface
     /**
      * Set MvcEvent
      *
-     * @param \Zend\Mvc\MvcEvent $mvcEvent
+     * @param  \Zend\Mvc\MvcEvent              $mvcEvent
      * @return \InstallScripts\ScriptInterface
      */
     public function setMvcEvent(MvcEvent $mvcEvent);

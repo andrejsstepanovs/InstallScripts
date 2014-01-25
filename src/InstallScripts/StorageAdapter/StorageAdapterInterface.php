@@ -2,7 +2,6 @@
 
 namespace InstallScripts\StorageAdapter;
 
-
 interface StorageAdapterInterface
 {
     /**
@@ -29,7 +28,7 @@ interface StorageAdapterInterface
     /**
      * Get current install script version
      *
-     * @param string $scriptName
+     * @param  string $scriptName
      * @return string
      */
     public function getScriptVersion($scriptName);
@@ -37,8 +36,8 @@ interface StorageAdapterInterface
     /**
      * Set script version
      *
-     * @param string $scriptName
-     * @param string $version
+     * @param  string                                                 $scriptName
+     * @param  string                                                 $version
      * @return \InstallScripts\StorageAdapter\StorageAdapterInterface
      */
     public function setScriptVersion($scriptName, $version);

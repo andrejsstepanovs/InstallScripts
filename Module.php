@@ -6,7 +6,6 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
 use Zend\Console\Adapter\AdapterInterface as Console;
 
-
 class Module implements
     AutoloaderProviderInterface,
     ConfigProviderInterface,
