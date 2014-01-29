@@ -10,4 +10,6 @@ before_script:
 
 script:
   - cd $TRAVIS_BUILD_DIR;
+  - mkdir -p build/logs
   - vendor/phpunit/phpunit/composer/bin/phpunit -c $TRAVIS_BUILD_DIR/travis.phpunit.xml
+  - php vendor/bin/coveralls -v

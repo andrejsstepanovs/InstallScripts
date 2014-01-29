@@ -9,8 +9,16 @@
     <filter>
         <blacklist>
             <directory>test</directory>
+            <directory>vendor</directory>
             <file>Module.php</file>
         </blacklist>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+        </whitelist>
     </filter>
+    <logging>
+        <log type="coverage-html" target="./build/logs/coverage" charset="UTF-8"/>
+        <log type="coverage-clover" target="./build/logs/clover.xml"/>
+    </logging>
 </phpunit>
 

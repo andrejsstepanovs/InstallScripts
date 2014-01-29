@@ -139,3 +139,9 @@ Use script
 ![ScreenShot](http://i.imgur.com/m6M6r3m.png)
 
 ![ScreenShot](http://i.imgur.com/v2LnocW.png)
+
+
+## Resources
+
+* Travis CI https://travis-ci.org/wormhit/InstallScripts
+* Coveralls https://coveralls.io/r/wormhit/InstallScripts
