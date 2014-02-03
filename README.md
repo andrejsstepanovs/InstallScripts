@@ -1,3 +1,10 @@
+[![Build Status](https://travis-ci.org/wormhit/InstallScripts.png?branch=master)]
+(https://travis-ci.org/wormhit/InstallScripts)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wormhit/InstallScripts/badges/quality-score.png?s=bd189bbfc713619cacd5f6d1e1d37caca046a70f)]
+(https://scrutinizer-ci.com/g/wormhit/InstallScripts/)
+[![Code Coverage](https://coveralls.io/repos/wormhit/InstallScripts/badge.png?branch=master)]
+(https://coveralls.io/r/wormhit/InstallScripts?branch=master)
+
 InstallScripts
 ==============
 
@@ -140,8 +147,3 @@ Use script
 
 ![ScreenShot](http://i.imgur.com/v2LnocW.png)
 
-
-## Resources
-
-* Travis CI https://travis-ci.org/wormhit/InstallScripts
-* Coveralls https://coveralls.io/r/wormhit/InstallScripts
